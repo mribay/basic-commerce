@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}{{details.product_name}}{% endblock title %}
+{% block heading %}Products{% endblock heading %}
+{% block products %}active{% endblock products %}
+{% block cart_value %}{{cart_value}}{% endblock cart_value %}
+
+{% block base %}
+    <div class="p-2"></div>
+    <div class="container-fluid d-flex flex-row justify-content-around align-items-center flex-wrap home-container mt-5 gap-2">
+        <div>
+            <img src="{{details.image_url}}" class="img-fluid rounded details-image" alt="{{details.products_name}} picture">
+        </div>
+        <div>
+            <div class="card details-card">
+                <div class="card-body">
+                    <h5 class="card-title">{{details.product_name}}</h5>
+                    <p class="card-text">{{details.long_description}}</p>
+                    <div class="row">
+                        <div class="col">
+                            <button class="btn btn-primary text-uppercase w-100" disabled>Buy now</button>
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary text-uppercase w-100" disabled>add to cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock base %}
+

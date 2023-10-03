@@ -1,0 +1,17 @@
+python -m venv venv
+
+venv/Scripts/activate
+
+pip install Django
+
+django-admin startproject main .
+
+python manage.py startapp shop
+
+python manage.py collectstatic
+
+python manage.py makemigrations shop
+
+python manage.py migrate
+
+python manage.py createsuperuser

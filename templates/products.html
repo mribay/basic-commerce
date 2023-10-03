@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Products{% endblock title %}
+{% block heading %}Products{% endblock heading %}
+{% block products %}active{% endblock products %}
+{% block cart_value %}{{cart_value}}{% endblock cart_value %}
+
+{% block base %}
+    <div class="p-4 mb-2"></div>
+    <div class="list-group">
+       {% for product in products %}
+          <a href="{% url 'details' id=product.id %}" class="list-group-item list-group-item-action products-item">
+            <div class="d-flex w-100 justify-content-between">
+              <div class="d-flex align-items-center">
+                  <img src="{{product.image_url}}" alt="{{product.product_name}}" class="mr-3" width="64">
+                  <h5 class="m-2">{{product.product_name}}</h5>
+              </div>
+              <small>{{product.date_and_time}}</small>
+            </div>
+            <p class="mb-1">{{product.short_description}}</p>
+            <small class="text-primary">${{product.price}}</small>
+          </a>
+       {% endfor %}
+    </div>
+{% endblock base %} 

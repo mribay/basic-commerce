@@ -1,0 +1,19 @@
+{% extends 'base.html' %} 
+
+{% block title %}Basic Commerce{% endblock title %} 
+{% block heading %}Basic Commerce{% endblock heading %}
+{% block home %}active{%endblock home %}
+{% block cart_value %}{{cart_value}}{% endblock cart_value %}
+ 
+{% block base %}
+    <div class="container-fluid d-flex flex-row justify-content-around align-items-center flex-wrap mt-5 home-container">
+        <div>
+            <div class="display-1">Basic Commerce</div>
+            <div class="display-5">Shop anytime in anywhere</div>
+            <a class="btn btn-primary text-uppercase mt-3" href="{% url 'products' %}" role="button">Shop now</a>
+        </div>
+        <div>
+            <img src="https://i.ibb.co/Lp9vP36/imgbin-laptop-ipad-computer-repair-technician-apple-png.png" class="img-fluid" alt="gadgets picture">
+        </div>
+    </div>
+{% endblock base %}
